@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Drip #1: Default Parameters in JavaScript</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <script>
+        function myFunc(param1, param2) {
+            if (param2 === undefined) {
+                param2 = "second string";
+            }
+        
+            console.log(param1, param2);
+        }
+        
+        // Outputs: "first string" and "second string version 2"
+        myFunc("first string", "second string version 2");
+        
+        
+        //Passing in an object parameter
+        function myFunc(paramObject) {
+        var defaultParams = {
+            param1: "first string",
+            param2: "second string",
+            param3: "third string"
+        };
+    
+        var finalParams = defaultParams;
+    
+        // We iterate over each property of the paramObject
+        for (var key in paramObject) {
+            // If the current property wasn't inherited, proceed
+            if (paramObject.hasOwnProperty(key)) {
+                // If the current property is defined,
+                // add it to finalParams
+                if (paramObject[key] !== undefined) {
+                    finalParams[key] = defaultParams[key];
+                }
+            }
+        }
+    
+        console.log(finalParams.param1,
+                    finalParams.param2,
+                    finalParams.param3);
+    }
+    </script>
+</head>
+<body>
+<!-- Start login page -->
+<div data-role="page" id="login">
+
+	<div data-role="header" data-position="fixed">
+		<h1>JS Drip #1: Default Parameters in JavaScript</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+                <h3>We want to have this:</h3>
+                <pre>
+                    <code>
+                        function myFunc(param1, param2 = "second string") {
+                            console.log(param1, param2);
+                        }
+                        
+                        // Outputs: "first string" and "second string"
+                        myFunc("first string");
+                        
+                        // Outputs: "first string" and "second string version 2"
+                        myFunc("first string", "second string version 2");
+                    </code>
+                </pre>
+                <h3>WorkAround:</h3>
+                <pre>
+                    <code>
+                        function myFunc(param1, param2) {
+                            if (param2 === undefined) {
+                                param2 = "second string";
+                            }
+                        
+                            console.log(param1, param2);
+                        }
+                        
+                        // Outputs: "first string" and "second string version 2"
+                        myFunc("first string", "second string version 2");
+                    </code>
+                </pre>
+	</div><!-- /content -->
+	<div data-role="footer" data-id="singleAppFooter" data-position="fixed">
+		<h4>JS Drip #1:</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>
