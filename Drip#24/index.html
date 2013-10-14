@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Drip #24: An Introduction to IFFEs - Immediately Invoked Function Expressions</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <script>
+        // Assignment of a function expression to a variable
+        var myFunction = function () { /* logic here */ };
+        
+        // Assignment of a function expression to a property
+        var myObj = {
+            myFunction: function () { /* logic here */ }
+        };
+        
+        
+        var foo = "foo value";
+
+        (function (innerFoo) {
+            // Outputs: "foo"
+            console.log(innerFoo);
+        })(foo);
+    </script>
+</head>
+<body>
+<!-- Start login page -->
+<div data-role="page" id="main">
+
+	<div data-role="header" data-position="fixed">
+		<h1>JS Drip #24: An Introduction to IFFEs - Immediately Invoked Function Expressions</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+            
+	</div><!-- /content -->
+	<div data-role="footer" data-id="singleAppFooter" data-position="fixed">
+		<h4>JS Drip #24</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>
