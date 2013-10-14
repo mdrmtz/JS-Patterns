@@ -1,6 +1,6 @@
 Default Parameters in JavaScript
 ===========
-Some languages — like Ruby, CoffeeScript, and upcoming versions of JavaScript[1] — have the ability to declare default parameters when defining a function. It works like this:
+Some languages — like Ruby, CoffeeScript, and [upcoming versions of JavaScript](https://brendaneich.com/2012/10/harmony-of-dreams-come-true) — have the ability to declare default parameters when defining a function. It works like this:
 
     function myFunc(param1, param2 = "second string") {
         console.log(param1, param2);
@@ -57,7 +57,7 @@ Well if you have more than a few parameters, you should probably be passing in a
                     finalParams.param3);
     }
     
-That's a little unwieldy, so if you're using this pattern a lot, it makes sense to extract the iteration and filtering logic into its own function. Fortunately, the clever folks who write jQuery and Underscore have done just that with their respective `extend` methods. [2] [3]
+That's a little unwieldy, so if you're using this pattern a lot, it makes sense to extract the iteration and filtering logic into its own function. Fortunately, the clever folks who write jQuery and Underscore have done just that with their respective `extend` methods. [2](http://underscorejs.org/#extend) [3](http://api.jquery.com/jQuery.extend/)
 
 Here's an updated version which uses Underscore's extend to achieve the same result.
 
@@ -84,7 +84,6 @@ And that's how you can get default parameters in current versions of JavaScript.
 
 References:
 
-Harmony of Dreams Come True, by Brendan Eich
-https://brendaneich.com/2012/10/harmony-of-dreams-come-true/
-Underscore's extend method
-jQuery's extend method
+* 1 [Harmony of Dreams Come True, by Brendan Eich](https://brendaneich.com/2012/10/harmony-of-dreams-come-true)
+* 2 [Underscore's extend method](http://underscorejs.org/#extend)
+* 3 [jQuery's extend method](http://api.jquery.com/jQuery.extend/)
