@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Drip #26: Creating Bound Functions with Function bind</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <script>
+        var hero = {
+            name: "Batman",
+            signal: function () {
+                console.log(this.name + " has been signaled.");
+            }
+        };
+        
+        var commissioner = {
+            name: "Jim Gordon",
+            signalBatman: hero.signal.bind(hero)
+        };
+        
+        hero = {
+            name: "Superman",
+            signal: function () {
+                console.log(this.name + " has been signaled.");
+            }
+        };
+        
+        // Outputs: "Batman has been signaled."
+        commissioner.signalBatman();
+    </script>
+</head>
+<body>
+<!-- Start login page -->
+<div data-role="page" id="main">
+
+	<div data-role="header" data-position="fixed">
+		<h1>JS Drip #26: Creating Bound Functions with Function#bind</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+            
+	</div><!-- /content -->
+	<div data-role="footer" data-id="singleAppFooter" data-position="fixed">
+		<h4>JS Drip #26</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>
